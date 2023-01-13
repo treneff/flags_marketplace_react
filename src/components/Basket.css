@@ -1,18 +1,20 @@
-.basket{
-    position:absolute;
-    top:30%;
-    left:30%;
-    background:blue;
-    height:40%;
-    width:40%;
-    margin:auto;
-    display:block;
-}
-.hidden{
-    display:hidden;
-    
+.basket {
+    background: darkslategrey;
+    color: white;
+    display: block;
+    height: 40%;
+    left: 30%;
+    margin: auto;
+    position: absolute;
+    top: 30%;
+    width: 40%;
 }
 
-.basket-item{
-    position:relative;
+.hidden {
+    display: hidden;
+
+}
+
+.basket-item {
+    position: relative;
 }
