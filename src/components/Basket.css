@@ -1,0 +1,18 @@
+.basket{
+    position:absolute;
+    top:30%;
+    left:30%;
+    background:blue;
+    height:40%;
+    width:40%;
+    margin:auto;
+    display:block;
+}
+.hidden{
+    display:hidden;
+    
+}
+
+.basket-item{
+    position:relative;
+}

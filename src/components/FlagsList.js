@@ -1,17 +1,23 @@
-import React from 'react'
+import React from 'react';
 import ListItem from './ListItem';
-import "./FlagsList.css"
-
-const FlagsList = ({ countries, onFlagClicked}) => {
+import './FlagsList.css';
+import { useState } from 'react';
+const FlagsList = ({ countries ,addToBasket}) => {
+    const [itemsToDisplay, setItemsToDisplay] = useState(20);
     const countryItems = countries.map((country, index) => {
-        return <ListItem country={country} key={index} onFlagClicked={onFlagClicked} />;
+        if (index < itemsToDisplay) {
+            return <ListItem country={country} key={index} addToBasket={addToBasket} />;
+        }
     });
 
+    // const showMoreItems = () => {
+    //     setItemsToDisplay(itemsToDisplay + 20);
+    // };
     return (
-        <div className ="shop-container">
+        <ul className='shop-container'>
             {countryItems}
-        </div>
+        </ul>
     );
 };
 
-export default FlagsList
+export default FlagsList;

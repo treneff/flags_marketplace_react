@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
 import FlagsList from '../components/FlagsList';
 
-const FlagShopContainer = () => {
+const FlagShopContainer = ({addToBasket}) => {
     const [countries, setCountries] = useState([]);
-    const [selectedCountry, setSelectedCountry] = useState(null);
 
     useEffect(() => {
         getCountries();
@@ -14,14 +13,10 @@ const FlagShopContainer = () => {
             .then((res) => res.json())
             .then((countries) => setCountries(countries));
     };
-    
-    const onFlagClicked = function (country) {
-        setSelectedCountry(country);
-    };
 
     return (
         <div>
-            <FlagsList countries={countries} onFlagClicked={onFlagClicked} />
+            <FlagsList countries={countries} addToBasket={addToBasket} />
         </div>
     );
 };
