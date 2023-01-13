@@ -11,12 +11,14 @@ const ListItem = ({ country, addToBasket }) => {
   };
 
   return (
-    <div onClick={handleItemClick}>
-      <img src={country.flags.svg} alt="asds" />
+    <>
+      <div onClick={handleItemClick}>
+        <img src={country.flags.svg} alt="asds" />
+      </div>
       {itemOpen ? (
         <SingleFlagInfo country={country} addToBasket={addToBasket} />
       ) : null}
-    </div>
+    </>
   );
 };
 
