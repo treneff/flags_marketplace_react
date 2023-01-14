@@ -1,33 +1,37 @@
 import React from "react";
 import "./Basket.css";
 const Basket = ({ showBasket, basketItems }) => {
-  // console.log("🚀 ~ file: Basket.js:4 ~ Basket ~ showBasket", showBasket)
-
   const basketItemsToDisplay = basketItems.map((basketItem, index) => {
-    // TODO change this to reflect contents properly
-    // return <div className="basket-item" key={index}>{basketItem.name.common}</div>;
     return (
       <div className="basket-item" key={index}>
-        {basketItem}
+        <p>{basketItem[0]}</p>
+        <p>{basketItem[1]}</p>
       </div>
     );
   });
 
+  const basketTotal = basketItems
+    .map((basketItem) => {
+      return parseFloat(basketItem[1].slice(1));
+    })
+    .reduce((previousValue, currentValue) => {
+      return previousValue + currentValue;
+    }, 0);
+  console.log(
+    "🚀 ~ file: Basket.js:17 ~ basketTotal ~ basketTotal",
+    basketTotal
+  );
+
   return (
     <>
       {showBasket ? (
-        <section className="basket">{basketItemsToDisplay}</section>
+        <section className="basket">
+          {basketItemsToDisplay}
+          <p>Total: {basketTotal}</p>
+        </section>
       ) : null}
     </>
   );
-
-  //   return (
-  //     <>
-  //       <section className={"basket" + (!showBasket ? "-hidden" : "")}>
-  //         {basketItemsToDisplay}
-  //       </section>
-  //     </>
-  //   );
 };
 
 export default Basket;

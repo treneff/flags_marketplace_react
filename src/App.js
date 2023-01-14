@@ -13,8 +13,6 @@ function App() {
   };
 
   const addToBasket = (event) => {
-    console.log("🚀 ~ file: App.js:16 ~ addToBasket ~ event.target.value", event.target.value);
-    console.log("🚀 ~ file: App.js:16 ~ addToBasket ~ event.target.innerHTML", event.target.innerHTML);
     const flagValue = event.target.value;
     const country =  event.target.innerHTML;
     // let newBasketItems = basketItems;
