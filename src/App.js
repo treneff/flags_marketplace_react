@@ -13,7 +13,7 @@ function App() {
   };
 
   const addToBasket = (event) => {
-    const flagSize = event.target.previousSibling.innerHTML
+    const flagSize = event.target.previousSibling.innerHTML;
     const flagValue = event.target.value;
     const country = event.target.innerHTML;
     setBasketItems((currentBasketItems) => [
@@ -22,10 +22,20 @@ function App() {
     ]);
   };
 
+  const removeFromBasket = (event) => {
+    const newBasket = [...basketItems];
+    newBasket.splice(event.target.value, 1);
+    setBasketItems(newBasket);
+  };
+
   return (
     <div className="App">
       <Header handleBasketClick={handleBasketClick} />
-      <Basket showBasket={showBasket} basketItems={basketItems} />
+      <Basket
+        showBasket={showBasket}
+        basketItems={basketItems}
+        removeFromBasket={removeFromBasket}
+      />
       <FlagShopContainer addToBasket={addToBasket} />
     </div>
   );
