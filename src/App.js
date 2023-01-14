@@ -13,13 +13,13 @@ function App() {
   };
 
   const addToBasket = (event) => {
+    const flagSize = event.target.previousSibling.innerHTML
     const flagValue = event.target.value;
-    const country =  event.target.innerHTML;
-    // let newBasketItems = basketItems;
-    // setBasketItems([country, ...newBasketItems]);
-    // const currentBasketItems = basketItems
-    // setFilteredProducts((currentFilteredProducts) => ([...currentFilteredProducts, ...productsToAdd]));
-    setBasketItems((currentBasketItems) => ([...currentBasketItems, [flagValue, country]]))
+    const country = event.target.innerHTML;
+    setBasketItems((currentBasketItems) => [
+      ...currentBasketItems,
+      [flagValue, country, flagSize],
+    ]);
   };
 
   return (
