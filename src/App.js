@@ -13,15 +13,21 @@ function App() {
 
     const handleItemClick = () => {
         setItemOpen(!itemOpen);
+        showModal()
     };
 
     const handleBasketClick = () => {
-        setShowBasket(!showBasket);
+        setItemOpen(false)
+        setShowBasket(!showBasket)
         showModal()
     };
 
     const showModal = () => {
         setModal(!modal);
+        if(modal === true){
+          setShowBasket(false)
+          setItemOpen(false)
+        }
     };
 
     const addToBasket = (event) => {
