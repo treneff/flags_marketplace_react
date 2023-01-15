@@ -1,7 +1,20 @@
 import React, { useEffect, useState } from "react";
 import "./Basket.css";
 const Basket = ({ showBasket, basketItems, removeFromBasket }) => {
-  const [basketTotal, setBasketTotal] = useState(0);
+  const getBasketTotal = basketItems
+    .map((basketItem) => {
+      return parseFloat(basketItem[1].slice(1));
+    })
+    .reduce((previousValue, currentValue) => {
+      return previousValue + currentValue;
+    }, 0);
+  
+    const [basketTotal, setBasketTotal] = useState(0);
+    
+    useEffect(() => {
+      setBasketTotal(getBasketTotal)
+    }, [basketItems])
+    
 
   const basketItemsToDisplay = basketItems.map((basketItem, index) => {
     return (
@@ -16,13 +29,6 @@ const Basket = ({ showBasket, basketItems, removeFromBasket }) => {
     );
   });
 
-  const getBasketTotal = basketItems
-    .map((basketItem) => {
-      return parseFloat(basketItem[1].slice(1));
-    })
-    .reduce((previousValue, currentValue) => {
-      return previousValue + currentValue;
-    }, 0);
 
   const discountTotal = (event) => {
     console.log("🚀 ~ file: Basket.js:26 ~ discountTotal ~ event", event);
@@ -46,7 +52,7 @@ const Basket = ({ showBasket, basketItems, removeFromBasket }) => {
       );
       setBasketTotal(discount15Total);
     } else {
-      console.log("Sorry, that's not a valid code.");
+      alert ("Sorry, that's not a valid code.");
     }
   };
 
@@ -55,7 +61,7 @@ const Basket = ({ showBasket, basketItems, removeFromBasket }) => {
       {showBasket ? (
         <section className="basket">
           {basketItemsToDisplay}
-          <p>Total: £{basketTotal}</p>
+          <p>Total: £{basketTotal.toFixed(2)}</p>
           <form onSubmit={discountTotal}>
             <input type="text" name="discount" id="discount" />
             <button type="submit">Apply Discount</button>
