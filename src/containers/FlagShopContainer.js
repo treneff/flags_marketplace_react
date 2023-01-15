@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import FlagsList from '../components/FlagsList';
 
-const FlagShopContainer = ({addToBasket}) => {
+const FlagShopContainer = ({addToBasket,itemOpen,handleItemClick}) => {
     const [countries, setCountries] = useState([]);
 
     useEffect(() => {
@@ -16,7 +16,7 @@ const FlagShopContainer = ({addToBasket}) => {
 
     return (
         <div>
-            <FlagsList countries={countries} addToBasket={addToBasket} />
+            <FlagsList itemOpen = {itemOpen} handleItemClick = {handleItemClick} countries={countries} addToBasket={addToBasket} />
         </div>
     );
 };

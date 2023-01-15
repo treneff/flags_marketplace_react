@@ -5,6 +5,7 @@
     left: 30%;
     margin: auto;
     position: absolute;
+    z-index: 9;
     top: 30%;
     width: 40%;
 }
