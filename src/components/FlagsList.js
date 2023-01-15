@@ -3,7 +3,7 @@ import ListItem from './ListItem';
 import './FlagsList.css';
 import { useState } from 'react';
 
-const FlagsList = ({ countries, addToBasket }) => {
+const FlagsList = ({ countries, addToBasket,itemOpen,handleItemClick }) => {
     const [maxItemsToDisplay, setMaxItemsToDisplay] = useState(20);
     const [filteredCountries, setFilteredCountries] = useState([]);
     const [searchCountry, setSearchCountry] = useState('');
@@ -14,7 +14,7 @@ const FlagsList = ({ countries, addToBasket }) => {
     const countriesNodes = countriesToDisplay.map((country, index) => {
         if (index < maxItemsToDisplay) {
             // do not display if the items are more than the maximum defined to display
-            return <ListItem country={country} key={index} addToBasket={addToBasket} />;
+            return <ListItem itemOpen = {itemOpen} handleItemClick = {handleItemClick}  country={country} key={index} addToBasket={addToBasket} />;
         }
         return null;
     });

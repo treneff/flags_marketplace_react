@@ -1,14 +1,8 @@
 import SingleFlagInfo from "./SingleFlagInfo";
-import { useState } from "react";
 import "./ListItem.css";
 
-const ListItem = ({ country, addToBasket }) => {
-  const [itemOpen, setItemOpen] = useState(false);
-
-  const handleItemClick = () => {
-    const itemStatus = !itemOpen;
-    setItemOpen(itemStatus);
-  };
+const ListItem = ({ country, addToBasket,itemOpen,handleItemClick }) => {
+ 
 
   return (
     <>
