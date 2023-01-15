@@ -14,7 +14,7 @@ const Basket = ({ showBasket, basketItems, removeFromBasket }) => {
 
   useEffect(() => {
     setBasketTotal(getBasketTotal);
-  }, [basketItems]);
+  }, [basketItems,getBasketTotal]);
 
   const basketItemsToDisplay = basketItems.map((basketItem, index) => {
     return (
@@ -60,7 +60,7 @@ const Basket = ({ showBasket, basketItems, removeFromBasket }) => {
       {showBasket ? (
         <section className="basket">
           {basketItemsToDisplay}
-          <p>Total: £{getBasketTotal}</p>
+          <p>Total: £{basketTotal}</p>
           <form onSubmit={discountTotal}>
             <input type="text" name="discount" id="discount" />
             <button type="submit">Apply Discount</button>
