@@ -14,7 +14,7 @@ const Basket = ({ showBasket, basketItems, removeFromBasket }) => {
 
   useEffect(() => {
     setBasketTotal(getBasketTotal);
-  }, [basketItems,getBasketTotal]);
+  }, [basketItems, getBasketTotal]);
 
   const basketItemsToDisplay = basketItems.map((basketItem, index) => {
     return (
@@ -51,7 +51,7 @@ const Basket = ({ showBasket, basketItems, removeFromBasket }) => {
       );
       setBasketTotal(discount15Total);
     } else {
-      console.log("Sorry, that's not a valid code.");
+      alert("Sorry, that's not a valid code.");
     }
   };
 
@@ -60,7 +60,7 @@ const Basket = ({ showBasket, basketItems, removeFromBasket }) => {
       {showBasket ? (
         <section className="basket">
           {basketItemsToDisplay}
-          <p>Total: £{basketTotal}</p>
+          <p>Total: £{basketTotal.toFixed(2)}</p>
           <form onSubmit={discountTotal}>
             <input type="text" name="discount" id="discount" />
             <button type="submit">Apply Discount</button>

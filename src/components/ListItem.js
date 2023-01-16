@@ -1,9 +1,7 @@
 import SingleFlagInfo from "./SingleFlagInfo";
 import "./ListItem.css";
 
-const ListItem = ({ country, addToBasket,itemOpen,handleItemClick }) => {
- 
-
+const ListItem = ({ country, addToBasket, itemOpen, handleItemClick }) => {
   return (
     <>
       <div onClick={handleItemClick}>
