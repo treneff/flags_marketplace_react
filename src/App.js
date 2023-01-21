@@ -13,20 +13,20 @@ function App() {
 
     const handleItemClick = () => {
         setItemOpen(!itemOpen);
-        showModal()
+        showModal();
     };
 
     const handleBasketClick = () => {
-        setItemOpen(false)
-        setShowBasket(!showBasket)
-        showModal()
+        setItemOpen(false);
+        setShowBasket(!showBasket);
+        showModal();
     };
 
     const showModal = () => {
         setModal(!modal);
-        if(modal === true){
-          setShowBasket(false)
-          setItemOpen(false)
+        if (modal === true) {
+            setShowBasket(false);
+            setItemOpen(false);
         }
     };
 
