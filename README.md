@@ -9,9 +9,8 @@ A React JS application with the aim to practice complex state managemenet in the
 * [Installation](#installation)
 
 <br>
-<img width="1506" alt="Screenshot 2023-01-12 at 13 24 25" src="https://user-images.githubusercontent.com/65739239/212085496-2725a4c3-2861-4c87-9af2-782e56b7c3c9.png">
-<img width="1506" alt="Screenshot 2023-01-12 at 13 24 59" src="https://user-images.githubusercontent.com/65739239/212088053-f8c108fd-66dd-4664-a73f-c99bb19f6aba.png">
-<img width="1507" alt="Screenshot 2023-01-12 at 13 24 35" src="https://user-images.githubusercontent.com/65739239/212085524-8d416d73-96a0-4e55-9bdd-f621a24dd8b4.png">
+<img width="1506" alt="Screenshot 2023-01-12 at 13 24 25" src="https://user-images.githubusercontent.com/65739239/214433621-4f16df95-bbdc-41ec-bc86-c4f14bb42afb.png">
+
 
 ## Technologies
 
